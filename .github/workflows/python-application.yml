@@ -48,18 +48,18 @@ jobs:
 
       # 6. Autenticarse en GitHub Container Registry
       - name: Login en GitHub Container Registry
-        uses: docker/login-action@v4
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # 7. Construir la imagen Docker
+      # 7. Construir la imagen de docker (¡REVISA EL PUNTO AL FINAL!)
       - name: Construir la imagen de docker
         run: |
-          docker build -t ghcr.io/arszaruma-gif/ejercicio:3.0.0
+          docker build -t ghcr.io/arszaruma-gif/ejercicio:3.0.0 .
 
-      # 8. Publicar la imagen generada
-      - name: Publicar la imagen
+      # 8. Publicar la imagen
+      - name: publicar la imagen
         run: |
           docker push ghcr.io/arszaruma-gif/ejercicio:3.0.0
