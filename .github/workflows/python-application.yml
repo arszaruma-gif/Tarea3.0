@@ -33,9 +33,9 @@ jobs:
           pytest
 
       # 4. Ejecutar la aplicación
-      - name: Ejecutar la aplicacion
+      - name: Ejecutar la app (Calculadora)
         run: |
-          python app/calculadora.py
+          python app.py
 
       # 5. Simular una fase de despliegue
       - name: Simular fase de despliegue
