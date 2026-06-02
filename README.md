@@ -1,6 +1,6 @@
 # Tarea 3.0 - CI/CD con GitHub Actions y Docker
 
-**Estudiante:** Kevin Santana  
+**Estudiante:** ALEX ZARUMA
 **Asignatura:** DEVOPS  
 **Aplicación:** ejercicio:3.0.0 (Calculadora Simple)
 
