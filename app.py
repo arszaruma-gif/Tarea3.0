@@ -14,9 +14,31 @@ def dividir(a, b):
     return a / b
 
 if __name__ == "__main__":
-    print("--- Ejecutando Aplicación Calculadora ---")
-    print(f"Suma de 5 + 3 = {sumar(5, 3)}")
-    print(f"Resta de 10 - 4 = {restar(10, 4)}")
-    print(f"Multiplicación de 2 * 6 = {multiplicar(2, 6)}")
-    print(f"División de 8 / 2 = {dividir(8, 2)}")
+    print("--- Aplicación Calculadora Interactiva ---")
+    
+    try:
+        # Solicitar datos por consola al usuario
+        num1 = float(input("Ingresa el primer número: "))
+        num2 = float(input("Ingresa el segundo número: "))
+        
+        print("\n--- Resultados ---")
+        print(f"Suma: {num1} + {num2} = {sumar(num1, num2)}")
+        print(f"Resta: {num1} - {num2} = {restar(num1, num2)}")
+        print(f"Multiplicación: {num1} * {num2} = {multiplicar(num1, num2)}")
+        
+        try:
+            print(f"División: {num1} / {num2} = {dividir(num1, num2)}")
+        except ValueError as e:
+            print(f"División: {e}")
+            
+    except (EOFError, ValueError):
+        # Esto se ejecuta de forma automática si corre en GitHub Actions 
+        # para evitar que el flujo se quede congelado esperando el teclado.
+        print("\n[Modo No-Interactivo detectado o Datos Inválidos]")
+        print("Ejecutando prueba automática con valores por defecto (10 y 5):")
+        print(f"Suma: 10 + 5 = {sumar(10, 5)}")
+        print(f"Resta: 10 - 5 = {restar(10, 5)}")
+        print(f"Multiplicación: 10 * 5 = {multiplicar(10, 5)}")
+        print(f"División: 10 / 5 = {dividir(10, 5)}")
+
     print("-----------------------------------------")
